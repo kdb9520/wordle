@@ -15,5 +15,6 @@ public class Wordle {
         SecretWord word = new SecretWord(null);
         ArrayList<String> secret = word.generateSecret();
         word.setSecret(secret);
+        System.out.println(word.getSecret());
     }
 }
