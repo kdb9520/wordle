@@ -9,13 +9,12 @@ public class SecretWord {
         this.secret = secret;
     }
 
-    public ArrayList<String> generateSecret() {
-        String secretWord = null;
+    public void generateSecret(String word) {
         ArrayList<String> secret = new ArrayList<>();
-        for (int i = 0; i < secretWord.length(); i++) {
-            secret.add(String.valueOf(secretWord.charAt(i)));
+        for (int i = 0; i < word.length(); i++) {
+            secret.add(String.valueOf(word.charAt(i)));
         }
-        return secret;
+        setSecret(secret);
     }
 
     public ArrayList<String> getSecret() {

@@ -30,6 +30,6 @@ public class Wordle {
 
     public void runGame(String word) {
         SecretWord secretWord = new SecretWord(null);
-        ArrayList<String> secret = secretWord.generateSecret();
+        secretWord.generateSecret(word);
     }
 }
