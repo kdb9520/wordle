@@ -23,12 +23,31 @@ public class Wordle {
         new Wordle(word);
     }
 
+    private GuessCheck check;
+    private SecretWord secretWord;
+
     public Wordle(String word) {
+        this.check = new GuessCheck();
+        this.secretWord = new SecretWord(null);
         runGame(word);
     }
 
     public void runGame(String word) {
-        SecretWord secretWord = new SecretWord(null);
-        secretWord.generateSecret(word);
+        int count = 0;
+        int correct = 0;
+        while (count < 6 && correct < 5) {
+            this.secretWord.generateSecret(word);
+            Guess guess = this.check.getGuess();
+            secretWord.checkGuess(guess);
+            correct = guess.getCorrectPositions();
+            count++;
+            check.setScore(1);
+            if (correct == 5) {
+                System.out.println("You won!");
+            } else if (count == 6) {
+                System.out.println("You lose!");
+            }
+        }
+        System.out.println("Wordle score: " + check.getScore());
     }
 }
