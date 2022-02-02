@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Wordle {
     public static void main(String[] args) {
         String word = null;
+        System.out.println("Enter file path for dict.txt.");
         try {
             Scanner input = new Scanner(System.in);
             File file = new File(input.nextLine());
