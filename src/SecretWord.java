@@ -17,6 +17,26 @@ public class SecretWord {
         setSecret(secret);
     }
 
+    public void checkGuess(Guess guess) {
+        int correct = 0;
+        int wrong = 0;
+        for (int i = 0; i < 5; i++) {
+            if (guess.getGuess().get(i).equals(secret.get(i))) {
+                if (secret.contains(guess.getGuess().get(i))) {
+                    wrong++;
+                    System.out.println(guess.getGuess().get(i) + " is in the wrong spot!");
+                } else {
+                    correct++;
+                    System.out.println(guess.getGuess().get(i) + " is correctly positioned!");
+                }
+            } else {
+                System.out.println(guess.getGuess().get(i) + " is not in the word!");
+            }
+        }
+        guess.setCorrectPositions(correct);
+        guess.setWrongPositions(wrong);
+    }
+
     public ArrayList<String> getSecret() {
         return secret;
     }
