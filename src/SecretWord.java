@@ -22,15 +22,15 @@ public class SecretWord {
         int wrong = 0;
         for (int i = 0; i < 5; i++) {
             if (guess.getGuess().get(i).equals(secret.get(i))) {
+                correct++;
+                System.out.println(guess.getGuess().get(i) + " is correctly positioned!");
+            } else {
                 if (secret.contains(guess.getGuess().get(i))) {
                     wrong++;
                     System.out.println(guess.getGuess().get(i) + " is in the wrong spot!");
                 } else {
-                    correct++;
-                    System.out.println(guess.getGuess().get(i) + " is correctly positioned!");
+                    System.out.println(guess.getGuess().get(i) + " is not in the word!");
                 }
-            } else {
-                System.out.println(guess.getGuess().get(i) + " is not in the word!");
             }
         }
         guess.setCorrectPositions(correct);

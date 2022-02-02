@@ -35,6 +35,8 @@ public class Wordle {
     public void runGame(String word) {
         int count = 0;
         int correct = 0;
+        System.out.println("Welcome to Wordle!");
+        System.out.println("Enter 5 letter word guesses (\"quit\" to quit)");
         while (count < 6 && correct < 5) {
             this.secretWord.generateSecret(word);
             Guess guess = this.check.getGuess();
@@ -42,6 +44,7 @@ public class Wordle {
             correct = guess.getCorrectPositions();
             count++;
             check.setScore(1);
+            System.out.println(guess);
             if (correct == 5) {
                 System.out.println("You won!");
             } else if (count == 6) {
