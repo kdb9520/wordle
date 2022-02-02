@@ -35,4 +35,13 @@ public class Guess {
     public ArrayList<String> getGuess() {
         return this.guess;
     }
+
+    @Override
+    public String toString() {
+        return "Guess #" + this.guessNumber +
+                ": " + this.guess +
+                " (Green:" + this.correctPositions +
+                " Yellow:" + this.wrongPositions +
+                ")";
+    }
 }
