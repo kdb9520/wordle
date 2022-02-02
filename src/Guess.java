@@ -1,10 +1,8 @@
 package src;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Guess {
-    private Scanner in = new Scanner(System.in);
     private static int currentGuessNumber = 1;
     private int guessNumber;
     private ArrayList<String> guess;
