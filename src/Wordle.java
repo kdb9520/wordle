@@ -7,7 +7,7 @@ public class Wordle {
     public static void main(String[] args) {
         String word = null;
         try {
-            Scanner input = new Scanner("C:\\Users\\kelle\\IdeaProjects\\wordle\\src\\dict.txt");
+            Scanner input = new Scanner(System.in);
             File file = new File(input.nextLine());
             input = new Scanner(file);
             int stopPoint = (int) (Math.random() * 5757);
