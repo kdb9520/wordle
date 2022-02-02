@@ -24,11 +24,13 @@ public class Wordle {
     }
 
     private String word;
+    private Guesses guesses;
     private GuessCheck check;
     private SecretWord secretWord;
 
     public Wordle(String word) {
         this.word = word;
+        this.guesses = new Guesses();
         this.check = new GuessCheck();
         this.secretWord = new SecretWord(null);
         runGame(word);
@@ -43,10 +45,11 @@ public class Wordle {
             this.secretWord.generateSecret(word);
             Guess guess = this.check.getGuess();
             secretWord.checkGuess(guess);
+            guesses.addGuess(guess);
+            guesses.displayGuesses();
             correct = guess.getCorrectPositions();
             count++;
             check.setScore(1);
-            System.out.println(guess);
             if (correct == 5) {
                 System.out.println("You won!");
             } else if (count == 6) {
