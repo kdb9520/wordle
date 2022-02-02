@@ -24,10 +24,12 @@ public class SecretWord {
             if (guess.getGuess().get(i).equals(secret.get(i))) {
                 correct++;
                 System.out.println(guess.getGuess().get(i) + " is correctly positioned!");
+                guess.getGuess().set(i, "G:" + guess.getGuess().get(i) + ":G");
             } else {
                 if (secret.contains(guess.getGuess().get(i))) {
                     wrong++;
                     System.out.println(guess.getGuess().get(i) + " is in the wrong spot!");
+                    guess.getGuess().set(i, "Y:" + guess.getGuess().get(i) + ":Y");
                 } else {
                     System.out.println(guess.getGuess().get(i) + " is not in the word!");
                 }
