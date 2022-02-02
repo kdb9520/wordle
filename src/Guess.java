@@ -33,4 +33,8 @@ public class Guess {
     public void setWrongPositions(int wrongPositions) {
         this.wrongPositions = wrongPositions;
     }
+
+    public ArrayList<String> getGuess() {
+        return this.guess;
+    }
 }
