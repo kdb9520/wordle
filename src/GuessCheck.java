@@ -30,4 +30,12 @@ public class GuessCheck {
         }
         return new Guess(guess);
     }
+
+    public void setScore(int amount) {
+        this.score += amount;
+    }
+
+    public int getScore() {
+        return this.score;
+    }
 }

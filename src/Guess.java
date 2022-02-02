@@ -17,7 +17,7 @@ public class Guess {
     }
 
     public int getCorrectPositions() {
-        return correctPositions;
+        return this.correctPositions;
     }
 
     public void setCorrectPositions(int correctPositions) {
@@ -25,7 +25,7 @@ public class Guess {
     }
 
     public int getWrongPositions() {
-        return wrongPositions;
+        return this.wrongPositions;
     }
 
     public void setWrongPositions(int wrongPositions) {
