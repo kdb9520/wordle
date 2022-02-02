@@ -23,10 +23,12 @@ public class Wordle {
         new Wordle(word);
     }
 
+    private String word;
     private GuessCheck check;
     private SecretWord secretWord;
 
     public Wordle(String word) {
+        this.word = word;
         this.check = new GuessCheck();
         this.secretWord = new SecretWord(null);
         runGame(word);
@@ -49,6 +51,7 @@ public class Wordle {
                 System.out.println("You won!");
             } else if (count == 6) {
                 System.out.println("You lose!");
+                System.out.println("Word was: " + this.word);
             }
         }
         System.out.println("Wordle score: " + check.getScore());
