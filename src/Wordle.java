@@ -53,6 +53,7 @@ public class Wordle {
             if (correct == 5) {
                 System.out.println("You won!");
             } else if (count == 6) {
+                check.setScore(1);
                 System.out.println("You lose!");
                 System.out.println("Word was: " + this.word);
             }

@@ -8,7 +8,7 @@ public class GuessCheck {
     private int score;
 
     public GuessCheck() {
-        this.score = 6;
+        this.score = 7;
     }
 
     public Guess getGuess() {
